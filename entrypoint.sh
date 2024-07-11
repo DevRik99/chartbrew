@@ -9,12 +9,5 @@ export VITE_APP_ONE_ACCOUNT_EXTERNAL_ID=${VITE_APP_ONE_ACCOUNT_EXTERNAL_ID}
 cd server
 NODE_ENV=production nohup node index.js &
 
-cd ../client
-# mkdir -p dist
-
-# Build the UI in the background
-# nohup sh -c 'echo "The UI is rebuilding. Please wait..." && npm run build && echo "UI built successfully!" && cp -rf build/* dist/' &
-nohup sh -c 'echo "The UI is rebuilding. Please wait..." && npm run build && echo "UI built successfully!"' &
-
 # Serve the UI
-npm run preview
+npm run start
