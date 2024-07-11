@@ -16,4 +16,4 @@ RUN npm run prepareSettings
 EXPOSE 4019
 
 # Define el comando de entrada para iniciar el servidor backend
-CMD ["npm", "run", "start"]
+CMD cd server && npm run start
