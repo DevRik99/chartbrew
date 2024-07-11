@@ -1,15 +1,19 @@
 FROM node:20-slim
 
+# Establece el directorio de trabajo en /code
 WORKDIR /code
+
+# Copia todo el código al directorio de trabajo
 COPY . .
 
-RUN cd client && npm install && cd ../server && npm install
+# Instala las dependencias del servidor backend
+RUN cd server && npm install
+
+# Prepara la configuración necesaria (si es necesario)
 RUN npm run prepareSettings
 
-RUN echo -e "\nBuilding the UI. This might take a couple of minutes...\n"
-RUN cd client && npm run build
-
-EXPOSE 4018
+# Expone el puerto necesario para el backend (ajusta según tus necesidades)
 EXPOSE 4019
 
-ENTRYPOINT ["./entrypoint.sh"]
+# Define el comando de entrada para iniciar el servidor backend
+CMD ["npm", "run", "start"]
