@@ -6,10 +6,8 @@ export VITE_APP_CLIENT_HOST=${VITE_APP_CLIENT_HOST}
 export VITE_APP_CLIENT_PORT=${VITE_APP_CLIENT_PORT}
 export VITE_APP_ONE_ACCOUNT_EXTERNAL_ID=${VITE_APP_ONE_ACCOUNT_EXTERNAL_ID}
 
-cd server
-NODE_ENV=production nohup node index.js &
+cd client
 
-cd ../client
 # mkdir -p dist
 
 # Build the UI in the background
